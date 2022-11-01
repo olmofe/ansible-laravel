@@ -1,5 +1,5 @@
 [dev]
-20.46.180.207
+20.166.67.11
 
 [all:vars]
 ansible_python_interpreter=/usr/bin/python3
