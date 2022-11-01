@@ -1,6 +1,6 @@
 ---
 # Initial Server Setup
-ansible_user: postgres
+remote_user: exam
 
 # MySQL Setup
 mysql_root_password: NEW_PASSWORD

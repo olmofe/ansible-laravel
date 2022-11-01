@@ -7,8 +7,8 @@
         path: "{{ remote_www_root }}/{{ app_root_dir }}"
         state: directory
         mode: '0755'
-        owner: "{{ ansible_user }}"
-        group: "{{ ansible_user }}"
+        owner: "{{ remote_user }}"
+        group: "{{ remote_user }}"
 
     - name: Rsync application files to the remote server
       synchronize:

@@ -19,7 +19,7 @@
 # User + Key Setup
 - name: Create a new regular user with sudo privileges
   user:
-    name: "{{ ansible_user }}"
+    name: "{{ remote_user }}"
     state: present
     groups: wheel
     append: true
@@ -28,7 +28,7 @@
 
 # - name: Set authorized key for remote user
 #   authorized_key:
-#     user: "{{ ansible_user }}"
+#     user: "{{ remote_user }}"
 #     state: present
 #     key: "{{ copy_local_key }}"
 
