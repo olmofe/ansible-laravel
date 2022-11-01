@@ -54,3 +54,9 @@ ansible-playbook -i hosts server-setup.yml -u olmofe
 cd into directory and run command
 - cd lavarel-ansible/Ansible-playbook
 - ansible-playbook main.yml -i inventories/dev/hosts --user olmofe
+
+misc 
+- sudo systemctl disable postgresql
+sudo apt-get --purge remove postgresql
+sudo apt-get purge postgresql*
+sudo apt-get --purge remove postgresql postgresql-doc postgresql-common

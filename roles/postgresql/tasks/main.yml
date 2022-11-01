@@ -62,8 +62,8 @@
   become_user: postgres
   postgresql_db: 
     name={{ mysql_app_db }}
-    template='template0'
     state=present
+    # template='template0'
     # login_user=postgres
 
 
