@@ -20,7 +20,7 @@
 
 - name: Create the database specified in group_var
   become: true
-  become_user: postgres
+  become_user: root
   postgresql_db: 
     name={{ mysql_app_db }}
     template='template0'
@@ -28,7 +28,7 @@
 
 - name: Ensure user has access to the new database
   become: true
-  become_user: postgres
+  become_user: root
   postgresql_user: db={{ mysql_app_db }}
     name={{ mysql_app_user }}
     password={{ mysql_app_pass }}
@@ -37,7 +37,7 @@
          
 - name: Ensure user does not have unnecessary permissions
   become: true
-  become_user: postgres
+  become_user: root
   postgresql_user: name={{ db_user }}
     role_attr_flags=NOSUPERUSER,NOCREATEDB
     state=preset
