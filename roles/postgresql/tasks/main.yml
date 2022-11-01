@@ -1,7 +1,7 @@
 ---
 - name: Install dependencies for PostgreSQL 
-  apt: name=['bash', 'openssl', 'libssl-dev', 'libssl-doc'] update_cache=true state=latest
-  # apt: name={{ item }} update_cache=true state=latest
+  apt: name={{ item }} update_cache=true state=latest
+  loop: ['bash', 'openssl', 'libssl-dev', 'libssl-doc']
   # with_items:
   #   - bash
   #   - openssl
@@ -9,8 +9,8 @@
   #   - libssl-doc
 
 - name: Install PostgreSQL 
-  apt: name=['postgresql', 'postgresql-contrib', 'libpq-dev', 'python3-psycopg2'] update_cache=true state=present
-  # apt: name={{ item }} update_cache=true state=present
+  apt: name={{ item }} update_cache=true state=present
+  loop: ['postgresql', 'postgresql-contrib', 'libpq-dev','python3-psycopg2']
   # with_items:
   #   - postgresql
   #   - postgresql-contrib
