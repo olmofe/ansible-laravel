@@ -53,7 +53,7 @@
     name: '{{ mysql_app_user }}'
     password: '{{ mysql_app_pass }}'
     role_attr_flags: CREATEDB,SUPERUSER,CREATEROLE
-    encrypted: no
+    encrypted: yes
     state: present
 
 - name: Create the database specified in group_var
