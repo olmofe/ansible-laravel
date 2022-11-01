@@ -17,7 +17,8 @@ app_root_dir: laravel-realworld
 document_root: "{{ remote_www_root }}/{{ app_root_dir }}/public"
 
 # Laravel Env Variables
-app_name: Travellist
+app_name: laravel-app
+# app_name: Travellist
 app_env: dev
 app_debug: true
 app_url: "http://{{ http_host }}"

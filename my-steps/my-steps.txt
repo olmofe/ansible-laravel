@@ -44,7 +44,8 @@ clone repository
 check if slave is reachable 
 # cd lavarel-ansible
 - cd ansible-laravel
-- ansible all -i hosts -m ping -u olmofe
+# ansible all -i hosts -m ping -u olmofe
+- ansible all -i hosts -m ping -u exam
 
 run server setup
 ansible-playbook -i hosts server-setup.yml -u olmofe

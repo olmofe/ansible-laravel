@@ -4,7 +4,8 @@
   roles:
     - { role: setup, tags: ['setup'] }
 
-    - { role: mariadb, tags: ['mysql', 'mariadb', 'db', 'lemp'] }
+    - { role: postgresql, tags: ['mysql', 'postgresql', 'db', 'lemp'] }
+    # - { role: mariadb, tags: ['mysql', 'mariadb', 'db', 'lemp'] }
 
     - { role: php, tags: ['php', 'web', 'php-fpm', 'lemp'] }
 
