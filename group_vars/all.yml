@@ -1,15 +1,16 @@
 ---
 # Initial Server Setup
-remote_user: sammy
+remote_user: exam
 
 # MySQL Setup
-mysql_root_password: MYSQL_ROOT_PASSWORD
-mysql_app_db: travellist
-mysql_app_user: travellist_user
-mysql_app_pass: DB_PASSWORD
+mysql_root_password: NEW_PASSWORD
+mysql_app_db: laravel
+mysql_app_user: exam
+mysql_app_pass: NEW_PASSWORD
 
 # Web Server Setup
-http_host: "{{ ansible_facts.eth0.ipv4.address }}"
+# http_host: "{{ ansible_facts.eth0.ipv4.address }}"
+http_host: "ansible-test.olmofe.live"
 remote_www_root: /var/www
 app_root_dir: travellist-demo
 document_root: "{{ remote_www_root }}/{{ app_root_dir }}/public"
