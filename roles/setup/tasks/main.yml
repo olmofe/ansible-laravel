@@ -26,11 +26,11 @@
     create_home: true
     shell: /bin/bash
 
-- name: Set authorized key for remote user
-  authorized_key:
-    user: "{{ remote_user }}"
-    state: present
-    key: "{{ copy_local_key }}"
+# - name: Set authorized key for remote user
+#   authorized_key:
+#     user: "{{ remote_user }}"
+#     state: present
+#     key: "{{ copy_local_key }}"
 
 - name: Disable password authentication for root
   lineinfile:
