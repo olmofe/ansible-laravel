@@ -20,3 +20,6 @@
 - name: Install PHP Modules / Extensions
   apt: name={{ item }} update_cache=yes state=latest
   loop: "{{ php_packages }}"
+  notify: 
+    - Restart apache2
+    - Restart PHP-FPM
