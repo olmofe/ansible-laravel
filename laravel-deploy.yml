@@ -2,8 +2,9 @@
 - hosts: all
   become: true
   handlers:
-    # - name: restart apache2
-    #   service: name=apache2 state=restarted
+    - name: restart apache2
+      service: name=apache2 state=restarted
+      ignore_errors: true
     - name: restart fpm
       service: name=php8.1-fpm state=restarted
     - name: restart nginx
