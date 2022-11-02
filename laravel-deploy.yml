@@ -43,7 +43,7 @@
     - name: Set up additional directory permissions for www-data user on storage folder
       acl:
         path: "{{ remote_www_root }}/{{ app_root_dir }}/storage/"
-        entry: group:www-data:rw
+        entry: group:www-data:rwX
         recursive: yes
         state: present
 
