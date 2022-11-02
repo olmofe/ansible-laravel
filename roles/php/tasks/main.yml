@@ -3,6 +3,7 @@
   become: true
   apt_repository:
     repo: 'ppa:ondrej/php'
+  update_cache: yes
 
 - name: Install php Prerequisites
   apt: name={{ item }} update_cache=yes state=latest
