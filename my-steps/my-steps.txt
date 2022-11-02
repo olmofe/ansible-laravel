@@ -47,6 +47,7 @@ clone repository
 check if slave is reachable 
 # cd lavarel-ansible
 - cd ansible-laravel
+git pull
 #cd ansible-control
 #ansible-control/lemp_ubuntu1804
 # ansible all -i hosts -m ping -u olmofe
@@ -68,3 +69,6 @@ sudo apt-get --purge remove postgresql postgresql-doc postgresql-common
 
 
 ansible-playbook -i hosts -u olmofe playbook.yml
+cat /var/log/nginx/error.log
+sudo tail -f /var/log/nginx/error.log
+sudo tail -f /var/log/nginx/access.log
