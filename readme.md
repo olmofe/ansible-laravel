@@ -21,6 +21,7 @@ eg. `ansible-playbook -i hosts laravel-deploy.yml -u sudo-user`
 5. Run the `laravel-deploy.yml` playbook to deploy the demo Laravel application.
 6. Access your server's IP address or chosen hostname( same as http_host value in group vars ans should be set as an A record with your domain provider ) to test the setup.
 
+6. swagger is not included in the app, to test endpoints see [here](https://github.com/gothinkster/realworld/tree/main/api)
 7. Here are the routes in this demo: 
 
 ```
