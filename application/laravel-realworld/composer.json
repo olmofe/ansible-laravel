@@ -16,7 +16,7 @@
         "laravel/tinker": "^2.7",
         "barryvdh/laravel-ide-helper": "^2.12",
         "brianium/paratest": "^6.4",
-        "fakerphp/faker": "^1.9.1",
+        "fzaninotto/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
@@ -30,6 +30,7 @@
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.12",
+        "fzaninotto/faker": "^1.9.1",
         "brianium/paratest": "^6.4",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
