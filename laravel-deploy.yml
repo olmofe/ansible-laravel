@@ -66,6 +66,10 @@
       command: "/usr/bin/php {{ remote_www_root }}/{{ app_root_dir }}/artisan storage:link"
       tags: [ 'laravel', 'artisan:storage' ]
 
+    - name: Cache config
+      command: "/usr/bin/php {{ remote_www_root }}/{{ app_root_dir }}/artisan config:cache"
+      tags: [ 'laravel', 'artisan:config' ]
+
     - name: Run Migrations + Seeders
       command: "/usr/bin/php {{ remote_www_root }}/{{ app_root_dir }}/artisan migrate --seed"
       tags: [ 'laravel', 'artisan:migrate' ]
