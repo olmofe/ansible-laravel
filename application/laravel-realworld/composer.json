@@ -6,7 +6,7 @@
     "homepage": "https://github.com/f1amy/laravel-realworld-example-app",
     "license": "MIT",
     "require": {
-        "php": "^8.0.2",
+        "php": "^7.0.0",
         "ext-json": "*",
         "ext-pdo": "*",
         "darkaonline/l5-swagger": "^8.3",
@@ -69,7 +69,7 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "platform": {
-            "php": "8.0.2"
+            "php": "7.1.7"
         },
         "allow-plugins": {
             "phpstan/extension-installer": true
