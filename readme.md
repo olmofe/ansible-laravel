@@ -20,3 +20,34 @@ The remote_user variable should be an existing can with sudo access, otherwise, 
 eg. `ansible-playbook -i hosts laravel-deploy.yml -u sudo-user`
 5. Run the `laravel-deploy.yml` playbook to deploy the demo Laravel application.
 6. Access your server's IP address or chosen hostname( same as http_host value in group vars ans should be set as an A record with your domain provider ) to test the setup.
+
+7. Here are the routes in this demo: 
+
+```
+GET|HEAD  / ................................................................................. 
+  POST      api/articles .......... api.articles.create › Api\Articles\ArticleController@create
+  GET|HEAD  api/articles .............. api.articles.list › Api\Articles\ArticleController@list
+  GET|HEAD  api/articles/feed ......... api.articles.feed › Api\Articles\ArticleController@feed
+  PUT       api/articles/{slug} ... api.articles.update › Api\Articles\ArticleController@update
+  DELETE    api/articles/{slug} ... api.articles.delete › Api\Articles\ArticleController@delete
+  GET|HEAD  api/articles/{slug} ........ api.articles.get › Api\Articles\ArticleController@show  
+  POST      api/articles/{slug}/comments api.articles.comments.create › Api\Articles\CommentsC…
+  GET|HEAD  api/articles/{slug}/comments api.articles.comments.get › Api\Articles\CommentsCont…  
+  DELETE    api/articles/{slug}/comments/{id} api.articles.comments.delete › Api\Articles\Comm…  
+  POST      api/articles/{slug}/favorite api.articles.favorites.add › Api\Articles\FavoritesCo…  
+  DELETE    api/articles/{slug}/favorite api.articles.favorites.remove › Api\Articles\Favorite…  
+  GET|HEAD  api/documentation . l5-swagger.default.api › L5Swagger\Http › SwaggerController@api  
+  GET|HEAD  api/oauth2-callback l5-swagger.default.oauth2_callback › L5Swagger\Http › SwaggerC…  
+  GET|HEAD  api/profiles/{username} ............. api.profiles.get › Api\ProfileController@show  
+  POST      api/profiles/{username}/follow . api.profiles.follow › Api\ProfileController@follow  
+  DELETE    api/profiles/{username}/follow api.profiles.unfollow › Api\ProfileController@unfol…  
+  GET|HEAD  api/tags .................................. api.tags.list › Api\TagsController@list  
+  GET|HEAD  api/user .............................. api.users.current › Api\UserController@show  
+  PUT       api/user ............................. api.users.update › Api\UserController@update
+  POST      api/users ........................ api.users.register › Api\AuthController@register  
+  POST      api/users/login ........................ api.users.login › Api\AuthController@login  
+  GET|HEAD  docs/asset/{asset} l5-swagger.default.asset › L5Swagger\Http › SwaggerAssetControl…  
+  GET|HEAD  docs/{jsonFile?} l5-swagger.default.docs › L5Swagger\Http › SwaggerController@docs   
+  GET|HEAD  hello .............................................................................  
+  GET|HEAD  sanctum/csrf-cookie ................... Laravel\Sanctum › CsrfCookieController@show
+  ```
