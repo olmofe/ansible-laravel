@@ -37,8 +37,9 @@
 
     # - name: remove fzgot ue
     
-    - name: Add faker to composer 
-      ansible.builtin.shell: composer require fakerphp/faker
+    - name: Add faker to composer
+      composer:
+        command: require fakerphp/faker
       # become: false
 
 
