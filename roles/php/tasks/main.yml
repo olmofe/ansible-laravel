@@ -1,7 +1,21 @@
 ---
+- name: Install php Prerequisites
+  apt: name={{ item }} update_cache=yes state=latest
+  loop: [ 'software-properties-common' ]
+
+- name: add php apt repository
+  apt_repository: 
+    repo: deb 'ppa:ondrej/php' 
+    state: present 
+    update_cache: yes
+
+# - name: Install php8
+#   apt: name={{ item }} update_cache=yes
+#   loop: ['php8.1', 'libapache2-mod-php8.1', 'php8.1-fpm', 'php8.1-mysql', 'libapache2-mod-fcgid']
+
 - name: Install Main PHP Packages
   apt: name={{ item }} update_cache=yes state=latest
-  loop: [ 'php-fpm', 'php-mysql' ]
+  loop: [ 'php8.1-fpm', 'php8.1-mysql' ]
 
 - name: Install PHP Modules / Extensions
   apt: name={{ item }} update_cache=yes state=latest
