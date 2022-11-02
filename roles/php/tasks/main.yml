@@ -16,7 +16,7 @@
 
 - name: Install Main PHP Packages
   apt: name={{ item }} update_cache=yes state=latest
-  loop: [ 'php8.1-fpm', 'php8.1-mysql' ]
+  loop: [ 'php8.1-fpm', 'php8.1-pgsql' ]
 
 - name: Install PHP Modules / Extensions
   apt: name={{ item }} update_cache=yes state=latest
