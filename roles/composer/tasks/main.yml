@@ -3,59 +3,46 @@
 #   command: "{{ composer_path }}"
 #   ignore_errors: true
 #   register: composer_installed
-# - name: Validate Composer checksum
-#   get_url:
-#     checksum: "sha384:795f976fe0ebd8b75f26a6dd68f78fd3453ce79f32ecb33e7fd087d39bfeb978342fb73ac986cd4f54edd0dc902601dc"
-#     dest: /usr/src/
-#     url: https://getcomposer.org/installer
-#   become: true
 
-- name: Download and install Composer
-  shell: curl -sS https://getcomposer.org/installer | php
-  args:
-    chdir: /usr/src/
-    creates: /usr/local/bin/composer
-    warn: false
-  become: true
+- name: Install Composer if its not already installed
+  block:
 
-- name: Add Composer to global path
-  copy: 
-    dest: /usr/local/bin/composer
-    group: root
-    mode: '0755'
-    owner: root
-    src: /usr/src/composer.phar
-    remote_src: yes
-  become: true
+    - name: Download Composer Installation Script (if not already installed)
+      get_url:
+        url: https://getcomposer.org/installer
+        dest: /tmp/composer-setup.php
 
-# - name: Install Composer if its not already installed
-#   block:
-#     - name: Download Composer Installation Script (if not already installed)
-#       get_url:
-#         url: https://getcomposer.org/installer
-#         dest: /tmp/composer-setup.php
+    - name: Run Composer Installer (if not already installed)
+      command:
+        cmd: /usr/bin/php /tmp/composer-setup.php
+        creates: composer.phar
 
-#     - name: Run Composer Installer (if not already installed)
-#       command:
-#         cmd: /usr/bin/php /tmp/composer-setup.php
-#         creates: composer.phar
+    - name: Copy Composer Executable to /usr/local/bin
+      become: true
+      copy:
+        src: composer.phar
+        dest: /usr/local/bin/composer
+        remote_src: yes
+        mode: '0755'
 
-#     - name: Copy Composer Executable to /usr/local/bin
-#       become: true
-#       copy:
-#         src: composer.phar
-#         dest: /usr/local/bin/composer
-#         remote_src: yes
-#         mode: '0755'
+    - name: Remove phar
+      file:
+        path: composer.phar
+        state: absent
 
-#     - name: Remove phar
-#       file:
-#         path: composer.phar
-#         state: absent
+    - name: Remove Install Script
+      file:
+        path: /tmp/composer-setup.php
+        state: absent
 
-#     - name: Remove Install Script
-#       file:
-#         path: /tmp/composer-setup.php
-#         state: absent
+    - name: remove fz faker from composer 
+      ansible.builtin.shell: composer remove fzaninotto/faker
+      become: true
+      ignore_errors: true
+    
+    - name: Add faker to composer 
+      ansible.builtin.shell: composer require fakerphp/faker
+      become: true
+
 
   # when: composer_installed is failed
