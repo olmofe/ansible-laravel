@@ -86,7 +86,8 @@
       tags: [ 'laravel', 'artisan:migrate' ]
 
     - name: Run Migrations + Seeders
-      command: "/usr/bin/php {{ remote_www_root }}/{{ app_root_dir }}/artisan migrate:refresh --seed"
+      command: "/usr/bin/php {{ remote_www_root }}/{{ app_root_dir }}/artisan migrate:refresh"
+      # command: "/usr/bin/php {{ remote_www_root }}/{{ app_root_dir }}/artisan migrate:refresh --seed"
       tags: [ 'laravel', 'artisan:migrate:refresh' ]
       notify:
         # - restart apache2
