@@ -52,8 +52,9 @@ run server setup
 ansible-playbook -i hosts server-setup.yml -u olmofe
 
 cd into directory and run command
-- cd lavarel-ansible/Ansible-playbook
-- ansible-playbook main.yml -i inventories/dev/hosts --user olmofe
+# cd lavarel-ansible/Ansible-playbook
+# ansible-playbook main.yml -i inventories/dev/hosts --user olmofe
+ansible-playbook -i hosts laravel-deploy.yml -u olmofe
 
 misc 
 - sudo systemctl disable postgresql

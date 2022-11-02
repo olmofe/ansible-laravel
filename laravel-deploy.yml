@@ -10,6 +10,14 @@
         owner: "{{ remote_user }}"
         group: "{{ remote_user }}"
 
+    - name: "Install Rsync on local device"
+      apt: >
+        pkg={{ item }}
+        state=latest
+        update_cache=yes
+        cache_valid_time=3600
+      loop: ['rsync']
+
     - name: Rsync application files to the remote server
       synchronize:
         src: "application/{{ app_root_dir }}"
