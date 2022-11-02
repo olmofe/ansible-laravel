@@ -35,14 +35,11 @@
         path: /tmp/composer-setup.php
         state: absent
 
-    # - name: remove fz faker from composer 
-    #   ansible.builtin.shell: composer remove fzaninotto/faker
-    #   become: true
-    #   ignore_errors: true
+    # - name: remove fzgot ue
     
     - name: Add faker to composer 
       ansible.builtin.shell: composer require fakerphp/faker
-      become: true
+      # become: false
 
 
   # when: composer_installed is failed
