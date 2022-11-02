@@ -4,11 +4,11 @@
   roles:
     - { role: setup, tags: ['setup'] }
 
-    # - { role: postgresql, tags: ['mysql', 'postgresql', 'db', 'lemp'] }
+    - { role: postgresql, tags: ['mysql', 'postgresql', 'db', 'lemp'] }
     # - { role: mariadb, tags: ['mysql', 'mariadb', 'db', 'lemp'] }
 
-    # - { role: php, tags: ['php', 'web', 'php7.2-fpm', 'lemp'] }
+    - { role: php, tags: ['php', 'web', 'php7.2-fpm', 'lemp'] }
 
-    # - { role: nginx, tags: ['nginx', 'web', 'http', 'lemp'] }
+    - { role: nginx, tags: ['nginx', 'web', 'http', 'lemp'] }
 
-    # - { role: composer, tags: ['composer'] }
+    - { role: composer, tags: ['composer'] }
