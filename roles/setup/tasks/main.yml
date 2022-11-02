@@ -46,6 +46,11 @@
 - name: Install required system packages
   apt: name={{ sys_packages }} state=latest
 
+- name: Install basic utilities
+  package:
+    name: unzip
+    state: present
+
 # UFW Setup
 - name: UFW - Allow SSH connections
   ufw:
