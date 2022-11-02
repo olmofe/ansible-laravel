@@ -6,6 +6,8 @@
       service: name=apache2 state=restarted
     - name: restart fpm
       service: name=php8.1-fpm state=restarted
+    - name: restart nginx
+      service: name=nginx state=restarted
   tasks:
     - name: Make sure the remote app root exists and has the right permissions
       file:
@@ -83,3 +85,4 @@
       tags: [ 'laravel', 'artisan:migrate' ]
       notify:
         - restart apache2
+        - restart nginx
