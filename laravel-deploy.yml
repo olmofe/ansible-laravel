@@ -6,7 +6,7 @@
       service: name=apache2 state=restarted
       ignore_errors: true
     - name: restart fpm
-      service: name=php7.2-fpm state=restarted
+      service: name=php8.1-fpm state=restarted
     - name: restart nginx
       service: name=nginx state=restarted
   tasks:
