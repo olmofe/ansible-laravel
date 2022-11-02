@@ -4,7 +4,9 @@
     name: php8.1-fpm
     state: restarted
     
-- name: Restart apache2
-  service:
-    name: apache2
-    state: restarted
+# - name: Restart apache2
+#   service:
+#     name: apache2
+#     state: restarted
+- name: restart nginx
+  service: name=nginx state=restarted

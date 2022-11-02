@@ -2,8 +2,8 @@
 - hosts: all
   become: true
   handlers:
-    - name: restart apache2
-      service: name=apache2 state=restarted
+    # - name: restart apache2
+    #   service: name=apache2 state=restarted
     - name: restart fpm
       service: name=php8.1-fpm state=restarted
     - name: restart nginx
@@ -77,12 +77,12 @@
       command: "/usr/bin/php {{ remote_www_root }}/{{ app_root_dir }}/artisan config:cache"
       tags: [ 'laravel', 'artisan:config' ]
       notify:
-        - restart apache2
+        # - restart apache2
         - restart fpm
 
     - name: Run Migrations + Seeders
       command: "/usr/bin/php {{ remote_www_root }}/{{ app_root_dir }}/artisan migrate --seed"
       tags: [ 'laravel', 'artisan:migrate' ]
       notify:
-        - restart apache2
+        # - restart apache2
         - restart nginx
