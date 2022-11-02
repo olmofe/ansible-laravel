@@ -40,11 +40,14 @@ install php
 clone repository
 # git clone https://github.com/olmofe/lavarel-ansible
 - rm -rf ansible-laravel
+#rm -rf ansible-control
 - git clone https://github.com/olmofe/ansible-laravel
+#git clone https://github.com/olmofe/ansible-control
 
 check if slave is reachable 
 # cd lavarel-ansible
 - cd ansible-laravel
+#cd ansible-control
 # ansible all -i hosts -m ping -u olmofe
 - ansible all -i hosts -m ping -u exam
 

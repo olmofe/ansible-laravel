@@ -1,6 +1,6 @@
 ---
 # Initial Server Setup
-remote_user: exam
+remote_user: olmofe
 
 # MySQL Setup
 mysql_root_password: NEW_PASSWORD
