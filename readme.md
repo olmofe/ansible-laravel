@@ -29,7 +29,7 @@ GET|HEAD  / ....................................................................
   POST      api/articles .......... api.articles.create › Api\Articles\ArticleController@create
   GET|HEAD  api/articles .............. api.articles.list › Api\Articles\ArticleController@list
   GET|HEAD  api/articles/feed ......... api.articles.feed › Api\Articles\ArticleController@feed
-  PUT       api/articles/{slug} ... api.articles.update › Api\Articles\ArticleController@update
+  PUT(i think this should be POST)       api/articles/{slug} ... api.articles.update › Api\Articles\ArticleController@update
   DELETE    api/articles/{slug} ... api.articles.delete › Api\Articles\ArticleController@delete
   GET|HEAD  api/articles/{slug} ........ api.articles.get › Api\Articles\ArticleController@show  
   POST      api/articles/{slug}/comments api.articles.comments.create › Api\Articles\CommentsC…
