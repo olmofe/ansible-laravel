@@ -35,12 +35,4 @@
         path: /tmp/composer-setup.php
         state: absent
 
-    # - name: remove fzgot ue
-    
-    - name: Add faker to composer
-      composer:
-        command: require fakerphp/faker
-      # become: false
-
-
   # when: composer_installed is failed
