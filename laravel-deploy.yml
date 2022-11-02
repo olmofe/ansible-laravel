@@ -1,6 +1,9 @@
 ---
 - hosts: all
   become: true
+  handlers:
+    - name: restart apache2
+      service: name=apache2 state=restarted
   tasks:
     - name: Make sure the remote app root exists and has the right permissions
       file:
@@ -73,3 +76,5 @@
     - name: Run Migrations + Seeders
       command: "/usr/bin/php {{ remote_www_root }}/{{ app_root_dir }}/artisan migrate --seed"
       tags: [ 'laravel', 'artisan:migrate' ]
+      notify:
+        - restart apache2
