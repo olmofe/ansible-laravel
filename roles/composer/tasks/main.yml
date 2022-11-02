@@ -1,8 +1,8 @@
 ---
-- name: Checks if Composer is already installed
-  command: "{{ composer_path }}"
-  ignore_errors: true
-  register: composer_installed
+# - name: Checks if Composer is already installed
+#   command: "{{ composer_path }}"
+#   ignore_errors: true
+#   register: composer_installed
 
 - name: Install Composer if its not already installed
   block:
@@ -35,4 +35,4 @@
         path: /tmp/composer-setup.php
         state: absent
 
-  when: composer_installed is failed
+  # when: composer_installed is failed
