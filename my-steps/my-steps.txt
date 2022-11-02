@@ -72,3 +72,5 @@ ansible-playbook -i hosts -u olmofe playbook.yml
 cat /var/log/nginx/error.log
 sudo tail -f /var/log/nginx/error.log
 sudo tail -f /var/log/nginx/access.log
+
+/var/www/
