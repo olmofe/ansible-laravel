@@ -18,6 +18,12 @@
         cache_valid_time=3600
       loop: ['rsync']
 
+    - name: alternate rsync on the ansible controller
+      connection: local
+      package:
+        name: rsync
+        state: present
+
     - name: Rsync application files to the remote server
       synchronize:
         src: "application/{{ app_root_dir }}"
