@@ -10,7 +10,7 @@ mysql_app_pass: NEW_PASSWORD
 
 # Web Server Setup
 # http_host: "{{ ansible_facts.eth0.ipv4.address }}"
-http_host: "ansible-test.olmofe.live"
+http_host: "exam.olmofe.live"
 remote_www_root: /var/www
 # app_root_dir: travellist-demo
 app_root_dir: laravel-realworld
