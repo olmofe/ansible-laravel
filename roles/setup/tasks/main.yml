@@ -52,10 +52,10 @@
     state: present
 
 # UFW Setup
-- name: UFW - Allow SSH connections
-  ufw:
-    rule: allow
-    name: OpenSSH
+# - name: UFW - Allow SSH connections
+#   ufw:
+#     rule: allow
+#     name: OpenSSH
 
 # - name: UFW - Deny all other incoming traffic by default
 #   ufw:
