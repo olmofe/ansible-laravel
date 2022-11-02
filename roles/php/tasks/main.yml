@@ -3,11 +3,11 @@
   apt: name={{ item }} update_cache=yes state=latest
   loop: [ 'software-properties-common' ]
 
-- name: add php apt repository
-  apt_repository: 
-    repo: deb 'ppa:ondrej/php' 
-    state: present 
-    update_cache: yes
+# - name: add php apt repository
+#   apt_repository: 
+#     repo: deb ppa:ondrej/php
+#     state: present 
+#     update_cache: yes
 
 # - name: Install php8
 #   apt: name={{ item }} update_cache=yes
