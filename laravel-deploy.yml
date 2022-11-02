@@ -59,9 +59,9 @@
         src: laravel-env.j2
         dest: "{{ remote_www_root }}/{{ app_root_dir }}/.env"
 
-    - name: clear existing cache
-      command: "/usr/bin/php {{ remote_www_root }}/{{ app_root_dir }}/artisan cache:clear"
-      tags: [ 'laravel', 'artisan:key' ]
+    # - name: clear existing cache
+    #   command: "/usr/bin/php {{ remote_www_root }}/{{ app_root_dir }}/artisan cache:clear"
+    #   tags: [ 'laravel', 'artisan:key' ]
 
     - name: Install Dependencies with Composer
       become: false
