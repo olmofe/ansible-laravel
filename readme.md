@@ -2,7 +2,9 @@
 
 This repository is a fairly modified repo of the [Automating Server Setup - a DigitalOcean Workshop Kit](https://www.digitalocean.com/community/meetup_kits/automating-server-setup-with-ansible-a-digitalocean-workshop-kit) and [laravel real world example](https://github.com/f1amy/laravel-realworld-example-app).
 
-## Quick Setup
+URL: [http://exam.olmofe.live/](http://exam.olmofe.live/)
+
+## Setup
 
 TL;DR:
 
