@@ -8,6 +8,6 @@ letsencrypt_keys_dir: "{{ letsencrypt_keys_dir }}"
 letsencrypt_csrs_dir: "{{ letsencrypt_csrs_dir }}"
 letsencrypt_certs_dir: "{{ letsencrypt_certs_dir }}"
 letsencrypt_account_key: /etc/letsencrypt/account/account.key
-domain_name: olmofe.live
+domain_name: "{{ domain_name }}"
 http_conf: "{{ app_root_dir }}"
 acme_challenge_olmofe_live: acme_challenge_olmofe_live
