@@ -64,8 +64,6 @@ server {
     }
 
     location ~ /\.(?!well-known).* {
-        allow all;
-        try_files $uri =404;
-        break;
+        deny all;
     }
 }

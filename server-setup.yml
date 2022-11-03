@@ -7,10 +7,11 @@
     - { role: postgresql, tags: ['mysql', 'postgresql', 'db', 'lemp'] }
     # - { role: mariadb, tags: ['mysql', 'mariadb', 'db', 'lemp'] }
 
-    - { role: php, tags: ['php', 'web', 'php8.1-fpm', 'lemp'] }
-
     - { role: ssl, tags: ['ssl', 'web', 'https', 'ssl'] }
     
+    - { role: php, tags: ['php', 'web', 'php8.1-fpm', 'lemp'] }
+
+
     - { role: nginx, tags: ['nginx', 'web', 'http', 'lemp'] }
 
     - { role: composer, tags: ['composer'] }
