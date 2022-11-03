@@ -39,12 +39,14 @@
   register: acme_challenge_olmofe_live
 
 - name: "Create .well-known/acme-challenge directory"
+  become: true
   file:
     path: /var/www/{{ app_root_dir }}/.well-known/acme-challenge
     state: directory
     owner: root
     group: root
     mode: u=rwx,g=rx,o=rx
+  become_user: root
 
 - name: Check if the .well-known was truly created
   ansible.builtin.stat:
