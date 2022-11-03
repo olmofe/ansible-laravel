@@ -45,7 +45,20 @@
     owner: root
     group: root
     mode: u=rwx,g=rx,o=rx
-  become: true
+
+- name: Check if the .well-known was truly created
+  ansible.builtin.stat:
+    path: "/var/www/{{ app_root_dir }}/.well-known/acme-challenge"
+  register: dir_to_check
+
+- name: Directory found
+  ansible.builtin.debug:
+    msg: "Directory .well-known is present"
+  when: dir_to_check.stat.exists
+- name: Directory Not found
+  ansible.builtin.debug:
+    msg: "Directory .well-known is not present after creation"
+  when: not dir_to_check.stat.exists
 
 - name: "Implement http-01 challenge files"
   copy:
