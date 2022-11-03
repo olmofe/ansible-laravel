@@ -11,4 +11,3 @@ letsencrypt_account_key: /etc/letsencrypt/account/account.key
 domain_name: "{{ domain_name }}"
 app_root_dir: "{{ app_root_dir }}"
 acme_challenge_olmofe_live: acme_challenge_olmofe_live
-remote_www_root: "{{ remote_www_root }}}""
