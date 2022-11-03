@@ -1,12 +1,14 @@
 # Redirect all http to https.
 server {
-    listen {{ http_port }} default_server;
+    listen {{ http_port }};
+	    listen [::]:{{ http_port }};
     server_name {{ http_host }};
     return 308 https://$host$request_uri;
 }
 
 server {
     listen {{ https_port }} http2 ssl;
+        listen [::]:{{ https_port }} http2 ssl;
     server_name {{ http_host }};
 
     ## redirect www to nowww
@@ -64,6 +66,12 @@ server {
     }
 
     location ~ /\.(?!well-known).* {
+        allow all;
+        try_files $uri =404;
+        break;
+    }
+
+    location ~ /\.well-known/acme-challenge/ {
         allow all;
         try_files $uri =404;
         break;
