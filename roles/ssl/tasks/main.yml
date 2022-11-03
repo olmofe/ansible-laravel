@@ -3,8 +3,8 @@
   file:
     path: "/etc/letsencrypt/{{ item }}"
     state: directory
-    owner: root
-    group: root
+    owner: olmofe
+    group: olmofe
     mode: u=rwx,g=x,o=x
   with_items:
   - account
@@ -44,8 +44,8 @@
   file:
     path: /var/www/{{ app_root_dir }}/.well-known/acme-challenge
     state: directory
-    owner: root
-    group: root
+    owner: olmofe
+    group: olmofe
     mode: u=rwx,g=rx,o=rx
   become_user: root
 
@@ -75,8 +75,8 @@
   copy:
     content: "{{ acme_challenge_olmofe_live['challenge_data'][item]['http-01']['resource_value'] }}"
     dest: "/var/www/{{ app_root_dir }}/{{ acme_challenge_olmofe_live['challenge_data'][item]['http-01']['resource'] }}"
-    owner: root
-    group: root
+    owner: olmofe
+    group: olmofe
     mode: u=rw,g=r,o=r
   with_items:
   - "{{ domain_name }}"
