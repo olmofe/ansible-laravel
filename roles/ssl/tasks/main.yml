@@ -40,7 +40,7 @@
 
 - name: "Create .well-known/acme-challenge directory"
   file:
-    path: /var/www/{{http_conf}}/.well-known/acme-challenge
+    path: /var/www/{{ app_root_dir }}/.well-known/acme-challenge
     state: directory
     owner: root
     group: root
@@ -50,7 +50,7 @@
 - name: "Implement http-01 challenge files"
   copy:
     content: "{{ acme_challenge_olmofe_live['challenge_data'][item]['http-01']['resource_value'] }}"
-    dest: "/var/www/{{http_conf}}/{{ acme_challenge_olmofe_live['challenge_data'][item]['http-01']['resource'] }}"
+    dest: "/var/www/{{ app_root_dir }}/{{ acme_challenge_olmofe_live['challenge_data'][item]['http-01']['resource'] }}"
     owner: root
     group: root
     mode: u=rw,g=r,o=r
