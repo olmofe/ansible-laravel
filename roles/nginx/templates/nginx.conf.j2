@@ -4,6 +4,12 @@ server {
 	    listen [::]:{{ http_port }};
     server_name {{ http_host }};
     return 308 https://$host$request_uri;
+
+    location ~ /\.(?!well-known).* {
+        allow all;
+        try_files $uri =404;
+        break;
+    }
 }
 
 server {
