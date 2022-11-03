@@ -96,3 +96,5 @@
     fullchain_dest: "{{ letsencrypt_certs_dir }}/fullchain_{{ domain_name }}"
     data: "{{ acme_challenge_olmofe_live }}"
   notify: Reload Nginx
+  ignore_errors: true
+  # manually copy the CSR into your domain provider and paste the incoming server file to the certs directory
