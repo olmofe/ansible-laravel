@@ -1,6 +1,13 @@
 ---
-http_conf: laravel-app
+http_conf: "{{app_root_dir}}"
 http_port: "80"
+https_port: "443"
+https_host: "{{ https_host }}"
 http_host: "{{ http_host }}"
+www_host: "{{ www_host }}"
 # http_host: "{{ ansible_facts.eth0.ipv4.address }}"
 document_root: /var/www/html
+letsencrypt_keys_dir: "{{ letsencrypt_keys_dir }}"
+letsencrypt_csrs_dir: "{{ letsencrypt_csrs_dir }}"
+letsencrypt_certs_dir: "{{ letsencrypt_certs_dir }}"
+domain_name: "{{ domain_name }}"

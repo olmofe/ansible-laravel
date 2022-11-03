@@ -9,6 +9,8 @@
 
     - { role: php, tags: ['php', 'web', 'php8.1-fpm', 'lemp'] }
 
+    - { role: ssl, tags: ['ssl', 'web', 'https', 'ssl'] }
+    
     - { role: nginx, tags: ['nginx', 'web', 'http', 'lemp'] }
 
     - { role: composer, tags: ['composer'] }

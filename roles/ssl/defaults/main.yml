@@ -1,0 +1,13 @@
+---
+acme_challenge_type: http-01
+acme_directory: https://acme-v02.api.letsencrypt.org/directory
+acme_version: 2
+acme_email: certificate-reminders@exam.olmofe.live
+letsencrypt_dir: /etc/letsencrypt
+letsencrypt_keys_dir: "{{ letsencrypt_keys_dir }}"
+letsencrypt_csrs_dir: "{{ letsencrypt_csrs_dir }}"
+letsencrypt_certs_dir: "{{ letsencrypt_certs_dir }}"
+letsencrypt_account_key: /etc/letsencrypt/account/account.key
+domain_name: olmofe.live
+http_conf: "{{ app_root_dir }}"
+acme_challenge_olmofe_live: acme_challenge_olmofe_live
