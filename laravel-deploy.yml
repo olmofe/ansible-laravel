@@ -26,7 +26,7 @@
         cache_valid_time=3600
       loop: ['rsync']
 
-    - name: alternate rsync on the ansible controller
+    - name: alternate rsync installer on the ansible controller
       connection: local
       package:
         name: rsync
@@ -40,7 +40,7 @@
           - "--no-motd"
           - "--exclude=.git,vendor,tests,storage/logs/*,storage/framework/sessions/*,storage/framework/cache/*"
 
-    - name: Set up additional directory permissions for www-data user on storage folder
+    - name: Set up directory permissions for www-data user on storage folder
       acl:
         path: "{{ remote_www_root }}/{{ app_root_dir }}/storage/"
         entry: group:www-data:rwX
