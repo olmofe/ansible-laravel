@@ -2,11 +2,11 @@
 
 This repository is a fairly modified repo of the [Automating Server Setup - a DigitalOcean Workshop Kit](https://www.digitalocean.com/community/meetup_kits/automating-server-setup-with-ansible-a-digitalocean-workshop-kit) and [laravel real world example](https://github.com/f1amy/laravel-realworld-example-app).
 
-URL: [http://exam.olmofe.live/](http://exam.olmofe.live/)
+URL: [https://www.olmofe.live/](https://www.olmofe.live/)
 
 ## Setup
 
-TL;DR:
+If my instructors try to reproduce my result, the below guide can help:
 
 Make sure you have [Ansible installed](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-ubuntu-18-04) on your control node, which can be your local machine or a remote server dedicated to running Ansible.
 The playbooks is verified for Ubuntu 18.04+ server to serve as node and host.
@@ -47,7 +47,7 @@ roles:
     - Cache config
     - Run Migrations + Seeders to fill the db with mock data.
 
-6. Access your server's IP address or chosen hostname( same as http_host value in group vars ans should be set as an A record with your domain provider ) to test the setup.
+6. Access your server's IP address or chosen hostname( same as http_host value in group vars which should be set as an A record with your domain provider ) to test the setup.
 
 6. swagger is not included in the app, to test endpoints see [here](https://github.com/gothinkster/realworld/tree/main/api)
 7. Here are the routes in this demo: 

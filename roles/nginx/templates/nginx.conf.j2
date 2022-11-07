@@ -4,12 +4,6 @@ server {
 	    listen [::]:{{ http_port }};
     server_name {{ http_host }};
     return 308 https://$host$request_uri;
-
-    location ~ /\.(?!well-known).* {
-        allow all;
-        try_files $uri =404;
-        break;
-    }
 }
 
 server {
@@ -18,9 +12,9 @@ server {
     server_name {{ http_host }};
 
     ## redirect www to nowww
-    if ($host = {{ www_host }} ) {
-        rewrite  ^/(.*)$  {{ https_host }}  permanent;
-    }
+    ## if ($host = {{ www_host }} ) {
+    ##     rewrite  ^/(.*)$  {{ https_host }}  permanent;
+    ## }
 
     # Recommended TLS settings from: https://wiki.mozilla.org/Security/Server_Side_TLS
     ssl on;

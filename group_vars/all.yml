@@ -10,9 +10,9 @@ mysql_app_pass: NEW_PASSWORD
 
 # Web Server Setup
 # http_host: "{{ ansible_facts.eth0.ipv4.address }}"
-http_host: "exam.olmofe.live"
-https_host: "https://exam.olmofe.live"
-www_host: "www.exam.olmofe.live"
+http_host: "olmofe.live"
+https_host: "https://olmofe.live"
+www_host: "www.olmofe.live"
 domain_name: "www.olmofe.live"
 remote_www_root: /var/www
 # app_root_dir: travellist-demo
